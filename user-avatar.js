@@ -10,7 +10,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var React = require('react');
 var initials = require('initials');
-var addPx = require('add-px');
 var contrast = require('contrast');
 
 // from https://flatuicolors.com/
@@ -62,7 +61,6 @@ var UserAvatar = function (_React$Component) {
       if (!name) throw new Error('UserAvatar requires a name');
 
       var abbr = initials(name);
-      size = addPx(size);
 
       var imageStyle = {
         display: 'block',
@@ -84,7 +82,7 @@ var UserAvatar = function (_React$Component) {
       var inner = void 0,
           classes = [className, 'UserAvatar'];
       if (src || srcset) {
-        inner = React.createElement('img', { className: 'UserAvatar--img', style: imageStyle, src: src, srcset: srcset, alt: name });
+        inner = React.createElement('img', { className: 'UserAvatar-img', style: imageStyle, src: src, srcset: srcset, alt: name });
       } else {
         var background = void 0;
         if (color) {
@@ -109,7 +107,7 @@ var UserAvatar = function (_React$Component) {
         { 'aria-label': name, className: classes.join(' '), style: style },
         React.createElement(
           'div',
-          { className: 'UserAvatar--inner', style: innerStyle },
+          { className: 'UserAvatar-inner', style: innerStyle },
           inner
         )
       );
